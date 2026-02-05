@@ -2,96 +2,149 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Автосалон - Продажа машин</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUX AUTO ASTANA — Официальный дилер</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h1>Элитный Автосалон</h1>
+<header>
+    <div class="logo">LUX AUTO</div>
+    <nav class="nav-links">
+        <a href="#catalog">Каталог</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
+        <a href="admin.html" class="admin-link">Админ-панель</a>
+        <a href="testdrive.html" class="nav-test-btn">Тест-драйв</a>
+    </nav>
+</header>
 
-<div class="controls" style="text-align: center; margin-bottom: 20px;">
-    <input type="text" id="carSearch" placeholder="Поиск по модели..." style="padding: 10px; width: 250px; border-radius: 20px; border: 1px solid #ccc;">
-    <div class="filter-container" style="margin-top: 15px;">
-        <button class="filter-btn active" data-filter="all">Все</button>
-        <button class="filter-btn" data-filter="Toyota">Toyota</button>
-        <button class="filter-btn" data-filter="BMW">BMW</button>
-        <button class="filter-btn" data-filter="Mercedes-Benz">Mercedes</button>
-        <button class="filter-btn" data-filter="Audi">Audi</button>
+<main>
+    <section class="hero">
+        <h1>Премиальный автопарк в Астане</h1>
+        <div class="controls">
+            <input type="text" id="carSearch" placeholder="Поиск по модели...">
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Все марки</button>
+                <button class="filter-btn" data-filter="Toyota">Toyota</button>
+                <button class="filter-btn" data-filter="BMW">BMW</button>
+                <button class="filter-btn" data-filter="Mercedes-Benz">Mercedes</button>
+                <button class="filter-btn" data-filter="Audi">Audi</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="catalog">
+        <div class="brand" data-brand="Toyota">
+            <h2>Toyota</h2>
+            <div class="cars">
+                <div class="car"><img src="images/toyota_camry.jpg"><h3>Toyota Camry 2.5 AT</h3><div class="price">14 500 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/toyota_corolla.jpg"><h3>Toyota Corolla 1.6 MT</h3><div class="price">10 200 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/toyota_rav4.jpg"><h3>Toyota RAV4 AWD</h3><div class="price">18 700 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/toyota_landcruiser.jpg"><h3>Toyota Land Cruiser 300</h3><div class="price">55 000 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/toyota_prado.jpg"><h3>Toyota Land Cruiser Prado</h3><div class="price">32 400 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/toyota_highlander.jpg"><h3>Toyota Highlander</h3><div class="price">28 800 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/toyota_yaris.jpg"><h3>Toyota Yaris</h3><div class="price">9 500 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/toyota_supra.jpg"><h3>Toyota Supra GR</h3><div class="price">35 200 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/toyota_hilux.jpg"><h3>Toyota Hilux</h3><div class="price">22 900 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/toyota_avensis.jpg"><h3>Toyota Avensis</h3><div class="price">12 100 000 ₸</div><button class="buy">Подробнее</button></div>
+            </div>
+        </div>
+
+        <div class="brand" data-brand="BMW">
+            <h2>BMW</h2>
+            <div class="cars">
+                <div class="car"><img src="images/bmw_x5.jpg"><h3>BMW X5 xDrive40i</h3><div class="price">42 800 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/bmw_x3.jpg"><h3>BMW X3 30i</h3><div class="price">28 200 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/bmw_m3.jpg"><h3>BMW M3 Competition</h3><div class="price">52 100 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/bmw_m5.jpg"><h3>BMW M5</h3><div class="price">65 500 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/bmw_3.jpg"><h3>BMW 3 Series 320i</h3><div class="price">22 300 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/bmw_5.jpg"><h3>BMW 5 Series 530i</h3><div class="price">30 900 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/bmw_7.jpg"><h3>BMW 7 Series 740i</h3><div class="price">58 000 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/bmw_z4.jpg"><h3>BMW Z4 Roadster</h3><div class="price">32 400 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/bmw_i4.jpg"><h3>BMW i4 Electric</h3><div class="price">38 200 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/bmw_i7.jpg"><h3>BMW i7 Electric</h3><div class="price">72 000 000 ₸</div><button class="buy">Подробнее</button></div>
+            </div>
+        </div>
+
+        <div class="brand" data-brand="Mercedes-Benz">
+            <h2>Mercedes-Benz</h2>
+            <div class="cars">
+                <div class="car"><img src="images/mb_c.jpg"><h3>Mercedes C-Class C200</h3><div class="price">24 500 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/mb_e.jpg"><h3>Mercedes E-Class E300</h3><div class="price">35 200 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/mb_s.jpg"><h3>Mercedes S-Class S500</h3><div class="price">68 800 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/mb_g.jpg"><h3>Mercedes G-Class G63</h3><div class="price">95 500 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/mb_glc.jpg"><h3>Mercedes GLC 300</h3><div class="price">29 800 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/mb_gle.jpg"><h3>Mercedes GLE 450</h3><div class="price">43 900 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/mb_cls.jpg"><h3>Mercedes CLS 350</h3><div class="price">38 100 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/mb_amg.jpg"><h3>Mercedes AMG GT</h3><div class="price">78 000 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/mb_eqs.jpg"><h3>Mercedes EQS Electric</h3><div class="price">65 500 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/mb_vito.jpg"><h3>Mercedes Vito</h3><div class="price">25 200 000 ₸</div><button class="buy">Подробнее</button></div>
+            </div>
+        </div>
+
+        <div class="brand" data-brand="Audi">
+            <h2>Audi</h2>
+            <div class="cars">
+                <div class="car"><img src="images/audi_a4.jpg"><h3>Audi A4 40 TFSI</h3><div class="price">22 600 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/audi_a6.jpg"><h3>Audi A6 45 TFSI</h3><div class="price">30 100 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/audi_a8.jpg"><h3>Audi A8 L</h3><div class="price">55 900 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/audi_q3.jpg"><h3>Audi Q3</h3><div class="price">19 200 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/audi_q5.jpg"><h3>Audi Q5</h3><div class="price">28 900 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/audi_q7.jpg"><h3>Audi Q7</h3><div class="price">40 800 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/audi_q8.jpg"><h3>Audi Q8</h3><div class="price">48 500 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/audi_rs6.jpg"><h3>Audi RS6 Avant</h3><div class="price">72 000 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/audi_tt.jpg"><h3>Audi TT</h3><div class="price">25 100 000 ₸</div><button class="buy">Подробнее</button></div>
+                <div class="car"><img src="images/audi_e.jpg"><h3>Audi e-tron</h3><div class="price">42 900 000 ₸</div><button class="buy">Подробнее</button></div>
+            </div>
+        </div>
     </div>
-</div>
 
-<div style="text-align: center; margin-bottom: 30px;">
-    <a href="testdrive.html" class="test-drive-btn">Записаться на тест-драйв</a>
-</div>
+    <section id="about">
+        <div class="about-container">
+            <h2>LUX AUTO ASTANA</h2>
+            <p>Премиальные автомобили в наличии и на заказ. Мы обеспечиваем полную юридическую чистоту и лучший сервис в Казахстане.</p>
+        </div>
+    </section>
 
-<div class="brand">
-    <h2>Toyota</h2>
-    <div class="cars">
-        <div class="car"><img src="Images/toyota_camry.jpg"><h3>Toyota Camry 2.5 AT</h3><div class="price">2 700 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/toyota_corolla.jpg"><h3>Toyota Corolla 1.6 MT</h3><div class="price">1 900 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/toyota_rav4.jpg"><h3>Toyota RAV4 AWD</h3><div class="price">3 200 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/toyota_landcruiser.jpg"><h3>Toyota Land Cruiser 300</h3><div class="price">7 500 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/toyota_prado.jpg"><h3>Toyota Land Cruiser Prado</h3><div class="price">5 400 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/toyota_highlander.jpg"><h3>Toyota Highlander</h3><div class="price">4 800 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/toyota_yaris.jpg"><h3>Toyota Yaris</h3><div class="price">1 500 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/toyota_supra.jpg"><h3>Toyota Supra GR</h3><div class="price">6 200 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/toyota_hilux.jpg"><h3>Toyota Hilux</h3><div class="price">3 900 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/toyota_avensis.jpg"><h3>Toyota Avensis</h3><div class="price">2 100 000 ₸</div><button class="buy">Купить</button></div>
-    </div>
-</div>
-
-<div class="brand">
-    <h2>BMW</h2>
-    <div class="cars">
-        <div class="car"><img src="Images/bmw_x5.jpg"><h3>BMW X5 xDrive40i</h3><div class="price">6 800 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/bmw_x3.jpg"><h3>BMW X3 30i</h3><div class="price">5 200 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/bmw_m3.jpg"><h3>BMW M3 Competition</h3><div class="price">9 100 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/bmw_m5.jpg"><h3>BMW M5</h3><div class="price">12 500 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/bmw_3.jpg"><h3>BMW 3 Series 320i</h3><div class="price">4 300 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/bmw_5.jpg"><h3>BMW 5 Series 530i</h3><div class="price">5 900 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/bmw_7.jpg"><h3>BMW 7 Series 740i</h3><div class="price">11 000 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/bmw_z4.jpg"><h3>BMW Z4 Roadster</h3><div class="price">6 400 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/bmw_i4.jpg"><h3>BMW i4 Electric</h3><div class="price">7 200 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/bmw_i7.jpg"><h3>BMW i7 Electric</h3><div class="price">13 000 000 ₸</div><button class="buy">Купить</button></div>
-    </div>
-</div>
-
-<div class="brand">
-    <h2>Mercedes-Benz</h2>
-    <div class="cars">
-        <div class="car"><img src="Images/mb_c.jpg"><h3>Mercedes C-Class C200</h3><div class="price">4 500 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/mb_e.jpg"><h3>Mercedes E-Class E300</h3><div class="price">6 200 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/mb_s.jpg"><h3>Mercedes S-Class S500</h3><div class="price">12 800 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/mb_g.jpg"><h3>Mercedes G-Class G63</h3><div class="price">18 500 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/mb_glc.jpg"><h3>Mercedes GLC 300</h3><div class="price">5 800 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/mb_gle.jpg"><h3>Mercedes GLE 450</h3><div class="price">7 900 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/mb_cls.jpg"><h3>Mercedes CLS 350</h3><div class="price">7 100 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/mb_amg.jpg"><h3>Mercedes AMG GT</h3><div class="price">15 000 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/mb_eqs.jpg"><h3>Mercedes EQS Electric</h3><div class="price">13 500 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/mb_vito.jpg"><h3>Mercedes Vito</h3><div class="price">4 200 000 ₸</div><button class="buy">Купить</button></div>
-    </div>
-</div>
-
-<div class="brand">
-    <h2>Audi</h2>
-    <div class="cars">
-        <div class="car"><img src="Images/audi_a4.jpg"><h3>Audi A4 40 TFSI</h3><div class="price">4 600 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/audi_a6.jpg"><h3>Audi A6 45 TFSI</h3><div class="price">6 100 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/audi_a8.jpg"><h3>Audi A8 L</h3><div class="price">10 900 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/audi_q3.jpg"><h3>Audi Q3</h3><div class="price">4 200 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/audi_q5.jpg"><h3>Audi Q5</h3><div class="price">5 900 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/audi_q7.jpg"><h3>Audi Q7</h3><div class="price">7 800 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/audi_q8.jpg"><h3>Audi Q8</h3><div class="price">8 500 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/audi_rs6.jpg"><h3>Audi RS6 Avant</h3><div class="price">14 000 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/audi_tt.jpg"><h3>Audi TT</h3><div class="price">5 100 000 ₸</div><button class="buy">Купить</button></div>
-        <div class="car"><img src="Images/audi_e.jpg"><h3>Audi e-tron</h3><div class="price">8 900 000 ₸</div><button class="buy">Купить</button></div>
-    </div>
-</div>
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="c-info">
+                <h3>Контакты</h3>
+                <p>📍 Астана, Кабанбай Батыра, 60/1</p>
+                <p>📞 +7 700 757 6134</p>
+            </div>
+            <div class="footer-socials">
+                <a href="https://wa.me/77007576134" class="wa-link">WhatsApp</a>
+                <a href="https://www.instagram.com/aksnli/" class="inst-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</main>
 
 <div id="carModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" id="closeSpecs">&times;</span>
         <div id="modalBody"></div>
+        <div class="calc-section">
+            <h4>Кредитный расчет</h4>
+            <div class="range-group"><label>Взнос: <span id="dpV">20%</span></label><input type="range" id="dpR" min="10" max="80" step="5" value="20"></div>
+            <div class="range-group"><label>Срок: <span id="termV">36 мес.</span></label><input type="range" id="termR" min="12" max="84" step="12" value="36"></div>
+            <div class="monthly-result">Ежемесячно: <strong id="monthlyP">0 ₸</strong></div>
+        </div>
+        <button class="btn-submit-main" onclick="openOrderForm()">Оформить заявку</button>
+    </div>
+</div>
+
+<div id="orderFormModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeOrder">&times;</span>
+        <h2>Заявка на <span id="orderCarTitle"></span></h2>
+        <div class="form-inputs">
+            <input type="text" id="uName" placeholder="Ваше имя">
+            <input type="tel" id="uPhone" placeholder="Ваш телефон">
+        </div>
+        <button class="btn-submit-main blue-btn" onclick="finalSubmit()">Отправить менеджеру</button>
     </div>
 </div>
 
