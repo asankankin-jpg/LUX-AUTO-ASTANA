@@ -3,84 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Панель управления | LUX AUTO</title>
+    <title>Админ-панель LUX AUTO</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body { background: #f4f7f6; color: #333; }
-        .admin-container { padding: 50px 5%; }
-        .order-card { 
-            background: #fff; border-radius: 15px; padding: 20px; 
-            margin-bottom: 15px; border-left: 5px solid #007bff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            display: flex; justify-content: space-between; align-items: center;
+        body { background: #000; color: #fff; padding: 40px; }
+        .order-box {
+            background: #111;
+            border: 1px solid #222;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .order-info h3 { margin: 0; color: #000; }
-        .order-info p { margin: 5px 0; color: #666; }
-        .delete-btn { 
-            background: #ff4d4d; color: #fff; border: none; 
-            padding: 10px 15px; border-radius: 8px; cursor: pointer; 
-        }
-        .header-admin { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-        .back-link { color: #007bff; text-decoration: none; font-weight: 700; }
+        .is-test { border-left: 5px solid #ff0055; } /* Выделяем тест-драйв красным */
+        .is-buy { border-left: 5px solid #007bff; }  /* Покупку синим */
+        .del-btn { background: #ff4d4d; border: none; color: #fff; padding: 10px; border-radius: 5px; cursor: pointer; }
+        .status-tag { font-size: 10px; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; background: #222; }
     </style>
 </head>
 <body>
-
-    <div class="admin-container">
-        <div class="header-admin">
-            <h1>Поступившие заявки</h1>
-            <a href="index.html" class="back-link">← Вернуться на сайт</a>
-        </div>
-        
-        <div id="ordersList">
-            </div>
-
-        <button onclick="clearAll()" style="margin-top: 20px; opacity: 0.5; background: none; border: none; cursor: pointer;">Очистить всё</button>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:40px">
+        <h1>Все заявки</h1>
+        <a href="index.html" style="color:#007bff; text-decoration:none">← На сайт</a>
     </div>
 
+    <div id="adminList"></div>
+
     <script>
-        function loadOrders() {
-            const list = document.getElementById('ordersList');
+        function load() {
+            const list = document.getElementById('adminList');
             const orders = JSON.parse(localStorage.getItem('orders') || "[]");
+            list.innerHTML = orders.length === 0 ? "<h2>Заявок нет</h2>" : "";
 
-            if (orders.length === 0) {
-                list.innerHTML = "<h3>Заявок пока нет</h3>";
-                return;
-            }
-
-            list.innerHTML = "";
-            orders.reverse().forEach((order, index) => {
+            orders.reverse().forEach((ord, i) => {
+                const isTest = ord.car.includes("ТЕСТ-ДРАЙВ");
                 list.innerHTML += `
-                    <div class="order-card">
-                        <div class="order-info">
-                            <h3>${order.car}</h3>
-                            <p><b>Клиент:</b> ${order.customer}</p>
-                            <p><b>Телефон:</b> ${order.phone}</p>
-                            <p><small>${order.date}</small></p>
+                    <div class="order-box ${isTest ? 'is-test' : 'is-buy'}">
+                        <div>
+                            <span class="status-tag">${isTest ? 'Тест-драйв' : 'Покупка'}</span>
+                            <h3 style="margin:10px 0">${ord.car}</h3>
+                            <p>👤 ${ord.customer} | 📞 ${ord.phone}</p>
+                            <small style="color:#555">${ord.date}</small>
                         </div>
-                        <button class="delete-btn" onclick="deleteOrder(${index})">Удалить</button>
+                        <button class="del-btn" onclick="remove(${i})">Удалить</button>
                     </div>
                 `;
             });
         }
 
-        function deleteOrder(index) {
+        function remove(i) {
             let orders = JSON.parse(localStorage.getItem('orders') || "[]");
-            orders.reverse(); // переворачиваем, чтобы удалить правильный
-            orders.splice(index, 1);
-            orders.reverse(); // возвращаем обратно
+            orders.reverse();
+            orders.splice(i, 1);
+            orders.reverse();
             localStorage.setItem('orders', JSON.stringify(orders));
-            loadOrders();
+            load();
         }
-
-        function clearAll() {
-            if(confirm("Удалить все заявки?")) {
-                localStorage.removeItem('orders');
-                loadOrders();
-            }
-        }
-
-        loadOrders();
+        load();
     </script>
 </body>
 </html>
