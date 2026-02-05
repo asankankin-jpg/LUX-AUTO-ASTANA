@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Запись на тест-драйв</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Запись на тест-драйв</h1>
+    <div class="form-box">
+        <label>Автомобиль: 
+            <select id="carSelect" style="width:100%; padding:8px; margin-top:5px;"></select>
+        </label>
+        <label style="display:block; margin-top:15px;">Имя: <input type="text" id="name"></label>
+        <label style="display:block; margin-top:15px;">Телефон: <input type="tel" id="phone"></label>
+        <button class="buy" style="margin-top:20px;" onclick="save()">Записаться</button>
+        <div id="result" style="margin-top:15px; text-align:center;"></div>
+        <a href="index.html" class="back">← Назад</a>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        const select = document.getElementById('carSelect');
+        // Берем список машин из carData
+        Object.keys(carData).forEach(name => {
+            const opt = document.createElement('option');
+            opt.value = name; opt.textContent = name;
+            select.appendChild(opt);
+        });
+
+        function save() {
+            const data = {
+                car: select.value,
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                date: new Date().toLocaleString()
+            };
+            if(!data.name || !data.phone) { alert("Заполните поля!"); return; }
+            const tests = JSON.parse(localStorage.getItem('testdrives') || '[]');
+            tests.push(data);
+            localStorage.setItem('testdrives', JSON.stringify(tests));
+            document.getElementById('result').innerHTML = "<b>Успешно записаны!</b>";
+        }
+    </script>
+</body>
+</html>
