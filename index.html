@@ -13,16 +13,18 @@
         <nav class="nav-links">
             <a href="#catalog">Каталог</a>
             <a href="#about">О нас</a>
+            <a href="#contacts">Контакты</a> 
             <a href="testdrive.html" class="nav-test-btn">Тест-драйв</a>
-            <a href="admin.html" class="admin-link">.</a>
+            <a href="admin.html" class="admin-link" style="opacity: 0.05; text-decoration: none; color: #fff;">.</a>
         </nav>
     </header>
 
     <section class="hero">
         <h1>Найдите свой идеальный автомобиль</h1>
+        <p style="color: #666; margin-bottom: 30px;">Лучшие предложения премиального сегмента в Астане</p>
         <div class="controls">
             <input type="text" id="carSearch" placeholder="Поиск марки или модели (например, BMW X5)...">
-            <div class="filter-container">
+            <div class="filter-container" style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; justify-content: center;">
                 <button class="filter-btn active" onclick="filterCars('all')">Все</button>
                 <button class="filter-btn" onclick="filterCars('Toyota')">Toyota</button>
                 <button class="filter-btn" onclick="filterCars('BMW')">BMW</button>
@@ -33,41 +35,53 @@
     </section>
 
     <main id="catalog">
-        </main>
+        <div style="text-align: center; padding: 50px;">Загрузка автомобилей...</div>
+    </main>
 
-    <section id="about">
-        <div class="about-container">
-            <h2>LUX AUTO ASTANA</h2>
-            <p>Премиальные автомобили в наличии и на заказ в Казахстане. Мы обеспечиваем полную юридическую чистоту и лучший сервис. Наша команда поможет вам подобрать автомобиль мечты с доставкой в любую точку страны.</p>
+    <section id="about" style="padding: 100px 5%; border-top: 1px solid #111; text-align: center;">
+        <div class="about-container" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 32px; margin-bottom: 20px; letter-spacing: 2px;">LUX AUTO ASTANA</h2>
+            <p style="color: #888; font-size: 18px; line-height: 1.8;">
+                Мы специализируемся на продаже и подборе автомобилей премиум-класса. 
+                Наш автосалон гарантирует юридическую чистоту каждой сделки, 
+                полную техническую диагностику и индивидуальный подход к каждому клиенту. 
+                Работаем на рынке Казахстана более 10 лет.
+            </p>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
+    <footer id="contacts">
+        <div class="footer-content" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
             <div class="c-info">
-                <h3>Контакты</h3>
-                <p>📍 г. Астана, проспект Кабанбай Батыра</p>
-                <p>📞 +7 (700) 757-61-34</p>
-                <p>⏰ Ежедневно: 09:00 - 21:00</p>
+                <h3 style="font-size: 24px; margin-bottom: 25px; color: #fff;">Наши контакты</h3>
+                <p style="margin-bottom: 12px; color: #888;">📍 г. Астана, проспект Кабанбай Батыра</p>
+                <p style="margin-bottom: 12px; color: #888;">
+                    📞 <a href="tel:+77007576134" style="color: #fff; text-decoration: none; font-weight: 700;">+7 (700) 000-00-00</a>
+                </p>
+                <p style="margin-bottom: 12px; color: #888;">⏰ Время работы: 09:00 - 21:00 (Без выходных)</p>
             </div>
-            <div class="footer-socials">
-    <a href="https://wa.me/77007576134" class="wa-link" target="_blank">WhatsApp</a>
-    
-    <a href="https://instagram.com/aksnli" target="_blank" class="inst-link">Instagram</a>
-</div>
+            
+            <div class="footer-actions" style="display: flex; flex-direction: column; gap: 15px;">
+                <h3 style="font-size: 20px; margin-bottom: 10px; color: #fff;">Мы в соцсетях</h3>
+                <div class="footer-socials" style="display: flex; gap: 15px;">
+                    <a href="https://wa.me/77007576134" class="wa-link" target="_blank" style="background: #25d366; color: #fff; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: 700;">WhatsApp</a>
+                    <a href="https://instagram.com/aksnli" class="inst-link" target="_blank" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: 700;">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 50px; text-align: center; color: #333; font-size: 12px; border-top: 1px solid #111; padding-top: 20px;">
+            © 2026 LUX AUTO ASTANA. Все права защищены.
         </div>
     </footer>
 
-    <div id="carModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modalBody"></div>
+    <div id="carModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999;">
+        <div class="modal-content" style="background: #fff; color: #000; margin: 5vh auto; width: 90%; max-width: 500px; padding: 30px; border-radius: 25px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <span class="close" onclick="closeModal()" style="position: absolute; top: 20px; right: 20px; font-size: 30px; cursor: pointer; color: #000;">&times;</span>
+            <div id="modalBody">
+                </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
