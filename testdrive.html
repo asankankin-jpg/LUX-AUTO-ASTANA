@@ -2,46 +2,99 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Запись на тест-драйв</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись на тест-драйв | LUX AUTO</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .test-container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 40px;
+            background: #111;
+            border-radius: 30px;
+            border: 1px solid #222;
+            text-align: center;
+        }
+        .test-container h1 { margin-bottom: 20px; font-weight: 800; }
+        .test-container p { color: #888; margin-bottom: 30px; }
+        .test-form input, .test-form select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 12px;
+            color: #fff;
+            font-family: inherit;
+        }
+        .btn-send {
+            width: 100%;
+            padding: 18px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-send:hover { background: #0056b3; transform: scale(1.02); }
+        .back-home { display: block; margin-top: 20px; color: #555; text-decoration: none; font-size: 14px; }
+    </style>
 </head>
 <body>
-    <h1>Запись на тест-драйв</h1>
-    <div class="form-box">
-        <label>Автомобиль: 
-            <select id="carSelect" style="width:100%; padding:8px; margin-top:5px;"></select>
-        </label>
-        <label style="display:block; margin-top:15px;">Имя: <input type="text" id="name"></label>
-        <label style="display:block; margin-top:15px;">Телефон: <input type="tel" id="phone"></label>
-        <button class="buy" style="margin-top:20px;" onclick="save()">Записаться</button>
-        <div id="result" style="margin-top:15px; text-align:center;"></div>
-        <a href="index.html" class="back">← Назад</a>
+
+    <div class="test-container">
+        <h1>Тест-драйв</h1>
+        <p>Выберите автомобиль и оставьте контакты, мы свяжемся с вами для уточнения времени.</p>
+        
+        <div class="test-form">
+            <select id="testCar">
+                <option value="Не выбрано">Выберите автомобиль</option>
+                <optgroup label="Toyota">
+                    <option>Toyota Camry 75</option>
+                    <option>Toyota Land Cruiser 300</option>
+                </optgroup>
+                <optgroup label="BMW">
+                    <option>BMW X5 M</option>
+                    <option>BMW M5 CS</option>
+                </optgroup>
+                <optgroup label="Mercedes">
+                    <option>Mercedes-Benz G63 AMG</option>
+                    <option>Mercedes-Benz S500</option>
+                </optgroup>
+            </select>
+            <input type="text" id="testName" placeholder="Ваше имя">
+            <input type="tel" id="testPhone" placeholder="Ваш телефон">
+            <button class="btn-send" onclick="sendTestDrive()">ЗАПИСАТЬСЯ</button>
+        </div>
+
+        <a href="index.html" class="back-home">← На главную</a>
     </div>
 
-    <script src="script.js"></script>
     <script>
-        const select = document.getElementById('carSelect');
-        // Берем список машин из carData
-        Object.keys(carData).forEach(name => {
-            const opt = document.createElement('option');
-            opt.value = name; opt.textContent = name;
-            select.appendChild(opt);
-        });
+        function sendTestDrive() {
+            const car = document.getElementById('testCar').value;
+            const name = document.getElementById('testName').value;
+            const phone = document.getElementById('testPhone').value;
 
-        function save() {
-            const data = {
-                car: select.value,
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
+            if(car === "Не выбрано" || !name || !phone) {
+                alert("Заполните все поля");
+                return;
+            }
+
+            const orders = JSON.parse(localStorage.getItem('orders') || "[]");
+            orders.push({
+                car: "ТЕСТ-ДРАЙВ: " + car,
+                customer: name,
+                phone: phone,
                 date: new Date().toLocaleString()
-            };
-            if(!data.name || !data.phone) { alert("Заполните поля!"); return; }
-            const tests = JSON.parse(localStorage.getItem('testdrives') || '[]');
-            tests.push(data);
-            localStorage.setItem('testdrives', JSON.stringify(tests));
-            document.getElementById('result').innerHTML = "<b>Успешно записаны!</b>";
+            });
+
+            localStorage.setItem('orders', JSON.stringify(orders));
+            alert("Заявка на тест-драйв принята!");
+            window.location.href = "index.html";
         }
     </script>
 </body>
 </html>
-
